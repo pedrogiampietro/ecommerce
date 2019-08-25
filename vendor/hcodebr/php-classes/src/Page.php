@@ -12,7 +12,6 @@ class Page {
 			"data"=>[]
 	];
 
-
 	public function __construct($opts = array()){
 
 		$this->options = array_merge($this->defaults, $opts);
@@ -34,8 +33,7 @@ class Page {
 		$this->tpl->draw("header");
 
 	}
-
-
+	
 	public function setData($data = array())
 	{
 	
@@ -45,23 +43,17 @@ class Page {
 
 	}
 
-
 	public function setTpl($name, $data = array(), $returnHTML = false)
 	{
-
 		$this->setData($data);
 
 		return $this->tpl->draw($name, $returnHTML);
-
 	}
 
 	public function __destruct(){
 
 		$this->tpl->draw("footer");
 	}
-
-
-
 }
 
  ?>
